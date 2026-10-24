@@ -160,4 +160,28 @@ If an existing repository already has a handoff/continuation mechanism:
 <!-- HANDOFF_ENTRIES_START -->
 <!-- Append project handoff sections before HANDOFF_ENTRIES_END. -->
 <!-- Removed inherited master-template operational handoffs during MilestonePay greenfield initialization. -->
+## Handoff: MP-AI-01-C1
+
+- **Task:** `tasks/MP-AI-01-model-integration-contract.md` — owner-selected Gemini provider and AI contract, **docs only**
+- **From:** Implementation / orchestration assistant
+- **To:** Genuinely independent exact-HEAD auditor
+- **Branch:** `docs/mp-ai-01-gemini-integration-contract` (stacked on `chore/mp-a0-greenfield-bootstrap`)
+- **Implementation commit:** `269ecd2c8d5b0a600c717a894066c1a54e792670` (followed by this handoff/status-only bookkeeping commit; audit final remote HEAD)
+- **PR:** https://github.com/mrdzyn/milestonepay-ai/pull/2 — Draft
+- **State:** READY FOR INDEPENDENT DOCS/SECURITY AUDIT, **not** approved for merge
+
+### Completed
+- Documented Google `gemini-3.8-flash` with medium thinking and planned server-side `@google/genai`.
+- Added ADR-002, AI adapter/JSON contract, strict evidence/source/hash validation, tests AI-01..AI-12, security and privacy boundaries, configuration placeholders and source spec updates.
+- Original MP-001..MP-032 test IDs preserved (32 unique). PR #1 unchanged at `55bbde025ccbee8bffa43d8ffc99c35b45bc5845`.
+
+### Actual validation and limits
+- Official Google model API ID, thinking levels, structured-output support checked from vendor docs.
+- GitHub tree commit and PR creation succeeded.
+- **NOT RUN:** Gemini API, installed SDK tests, application test suite, local Python project-profile validator, hosted Actions. Local direct GitHub clone was attempted but blocked by DNS (`Could not resolve host: github.com`). This is **not** a passing CI result or a repository CI exception.
+- No release, deployment, merge, production/sandbox financial operation, credential or dependency changes.
+
+### Audit focus / next action
+Independently fetch final PR HEAD; inspect stacked diff, verify non-payment AI authority and strict citation/version rules, independently run the profile validator where possible, evaluate fixture-matrix completeness and official model docs. Report PASS/PARTIAL/FIX REQUIRED with exact SHA. Request **separate human approval** only after independent PASS. If MP-A0 merges first, retarget/rebase PR #2 and repeat exact-head verification; never self-merge.
+
 <!-- HANDOFF_ENTRIES_END -->

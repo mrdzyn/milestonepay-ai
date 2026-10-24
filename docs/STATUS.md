@@ -6,9 +6,9 @@
 - **Primary branch:** `main`
 - **Dependency:** [MP-A0 Draft PR #1](https://github.com/mrdzyn/milestonepay-ai/pull/1) at `55bbde025ccbee8bffa43d8ffc99c35b45bc5845`
 - **Working branch:** `docs/mp-ai-01-gemini-integration-contract`
-- **PR:** #2 Draft, stacked onto `chore/mp-a0-greenfield-bootstrap`
+- **PR:** [#2](https://github.com/mrdzyn/milestonepay-ai/pull/2) — Draft, stacked onto `chore/mp-a0-greenfield-bootstrap`
 - **Active task:** `tasks/MP-AI-01-model-integration-contract.md`
-- **Active handoff:** None (will be set to MP-AI-01-C1 after PR creation)
+- **Active handoff:** MP-AI-01-C1
 
 ## Documented
 - Owner chose stable Gemini `gemini-3.8-flash` and medium thinking on 2026-10-24.
