@@ -100,7 +100,7 @@ flowchart TD
   DB --> Web
 ```
 
-**Implementation choices:** Next.js + TypeScript + Tailwind/shadcn-compatible UI; Supabase Auth + Postgres with RLS; server-side PayPal REST client via `fetch` and fixed sandbox origin; one real text-capable AI provider/model with structured JSON responses (choose and document exact provider by Day 9); Vitest for units/integration; Playwright for browser and sandbox integration; optional Vercel/Render for hosting. Pin dependency versions and Node version in repo before implementation. If screenshots are enabled, use a verified vision-capable model and clear image-transmission consent, otherwise use text-only evidence.
+**Implementation choices:** Next.js + TypeScript + Tailwind/shadcn-compatible UI; Supabase Auth + Postgres with RLS; server-side PayPal REST client via `fetch` and fixed sandbox origin; Google Gemini 3.8 Flash (`gemini-3.8-flash`), medium thinking, via a planned server-only `@google/genai` adapter with independently validated structured JSON (selected on Oct 24; implementation still pending); Vitest for units/integration; Playwright for browser and sandbox integration; optional Vercel/Render for hosting. Pin dependency versions and Node version in repo before implementation. If screenshots are enabled, use a verified vision-capable model and clear image-transmission consent, otherwise use text-only evidence.
 
 **Trust boundaries:** Browser is untrusted; uploads and AI output are untrusted; PayPal is external authority for payment status; database policies are a second line of defense; authorization to capture is solely a backend-validated human action. Client-supplied order IDs, totals, actor IDs, AI verdicts, or payment states are never trusted.
 
@@ -471,3 +471,6 @@ DEMO_MODE=true
 ---
 
 *Repository import note (2026-10-24): This planning specification was prepared before repository initialization. The repository exists; production code, PayPal transactions, audit, and submission remain unimplemented.*
+
+### October 24 owner decision — Gemini model
+Google Gemini 3.8 Flash (`gemini-3.8-flash`) is the selected provider; the Day 9 work is **implementation/verification**, not a model-selection task. See ADR-002 and `docs/AI-VERIFICATION-CONTRACT.md`. The original 18-day milestones and 32 MP acceptance IDs are unchanged. AI output remains advisory; payment capture always requires explicit buyer permission.

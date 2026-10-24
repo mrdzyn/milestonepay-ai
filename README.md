@@ -16,7 +16,7 @@ The first PR is intentionally docs/configuration-only under the inherited human-
 
 - **Web:** Next.js + TypeScript and an accessible, responsive UI (after design approval)
 - **Auth/data:** Supabase Auth, Postgres + row-level security, private evidence storage
-- **AI:** actual model provider with strictly validated, evidence-referenced outputs; advisory only
+- **AI:** Gemini 3.8 Flash (`gemini-3.8-flash`, planned server-only `@google/genai`), structured/citation-validated output; advisory only. See [ADR-002](docs/ADR-002-GEMINI-PRIMARY.md) and [AI contract](docs/AI-VERIFICATION-CONTRACT.md).
 - **Payments:** fixed PayPal Sandbox merchant, Orders v2 AUTHORIZE; Payments v2 capture/void; verified webhooks and durable idempotency
 - **QA:** unit/integration tests, Playwright, real Sandbox evidence, separate exact-head security review
 

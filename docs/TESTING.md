@@ -269,3 +269,8 @@ The authoritative 32-test matrix is `docs/MILESTONEPAY-SPEC-v1.md`, section 11. 
 4. Independent auditor gives PASS / FIX REQUIRED against the same remote head.
 
 Before MP-A2/MP-A3 claims, require actual controlled PayPal Sandbox authorize/capture and separate void traces; AI provider/model metadata and evidence-linked results; negative webhook, concurrency, cross-user and prompt injection tests. The AI agent performing implementation cannot independently pass its own audit. Hosted CI is **NOT PASS** until an actual job runs successfully. No inherited account-level billing exception applies automatically.
+
+---
+
+## MP-AI-01 contract-only checks
+The selected model is `gemini-3.8-flash`; `docs/AI-VERIFICATION-CONTRACT.md` defines AI-01–AI-12 provider, schema, stale-version, forgery, prompt-injection and no-payment-capability tests. These extend, not renumber, MP-001–MP-032. MP-AI-01 is documentation only: independent exact-head spec validation is the immediate objective. No actual model call, executable AI negative test or CI PASS may be claimed until it has run.

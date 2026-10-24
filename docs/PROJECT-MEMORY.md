@@ -88,6 +88,11 @@ Do not add:
 **Rationale:** A short hackathon schedule does not justify silently bypassing controls.
 
 
+### MP-M004 — Primary AI model decision (October 24, 2026)
+**Decision:** Select Google Gemini 3.8 Flash (`gemini-3.8-flash`) via an official server-side adapter and medium thinking as the sole hackathon MVP model. AI output is citation-validated, advisory only; no automatic model fallback or PayPal tools.
+
+**Rationale:** Multimodal structured evidence review is feasible for the 18-day prototype while maintaining human-approved PayPal payment control. ADR-002 contains the binding technical contract.
+
 ## Maintenance rule
 
 When adding an entry:

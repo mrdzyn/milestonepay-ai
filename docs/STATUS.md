@@ -1,31 +1,28 @@
 # MilestonePay AI — Project Status
 
 ## Project
-- **Current phase:** MP-A0 — greenfield template initialization
-- **Status:** Draft initialization change, **not** independently audited; no running app
+- **Current phase:** MP-A0 pending; MP-AI-01 Gemini provider decision/docs stacked on MP-A0
+- **Status:** Draft spec-only integration contract, not independently audited or implemented
 - **Primary branch:** `main`
-- **Working branch:** `chore/mp-a0-greenfield-bootstrap`
-- **Base SHA:** `01de15e4a847f3536c6957853882705f54d714f6`
-- **PR:** [#1](https://github.com/mrdzyn/milestonepay-ai/pull/1) — Draft, no independent audit or merge approval
-- **Active task:** `tasks/MP-A0-greenfield-initialization.md`
-- **Active handoff:** None
+- **Dependency:** [MP-A0 Draft PR #1](https://github.com/mrdzyn/milestonepay-ai/pull/1) at `55bbde025ccbee8bffa43d8ffc99c35b45bc5845`
+- **Working branch:** `docs/mp-ai-01-gemini-integration-contract`
+- **PR:** #2 Draft, stacked onto `chore/mp-a0-greenfield-bootstrap`
+- **Active task:** `tasks/MP-AI-01-model-integration-contract.md`
+- **Active handoff:** None (will be set to MP-AI-01-C1 after PR creation)
 
-## Completed
-- Existing repository was created from `mrdzyn/ai-native-project-template`.
-- MilestonePay product specification and owner-selected scope exist as planning artifacts.
-- A bootstrap change is proposed on a dedicated branch.
+## Documented
+- Owner chose stable Gemini `gemini-3.8-flash` and medium thinking on 2026-10-24.
+- MP-AI-01 proposes ADR-002 and a strict evidence-bound AI verification interface/test contract.
+- MP-A0 remains unmerged and requires its own independent audit/human approval.
 
 ## NOT DONE / NOT TESTED
-- Greenfield pruning and project profile validation: pending final exact-head validation.
-- Independent project initialization audit: pending.
-- Next.js scaffolding, Supabase schema, payment controller, real PayPal Sandbox operations, AI calls, design approval, QA, public deployment, and Devpost submission: NOT IMPLEMENTED.
-- GitHub branch protection/rulesets and hosted CI on this repository: NOT VERIFIED. No CI exception has been granted for this PR.
+- No Gemini SDK installed, API key configured, API call made, model test executed, schema code implemented or payment action connected.
+- No Next.js/Supabase/PayPal implementation, UI approval, independent audit, hosted CI PASS, public deployment or Devpost submission.
+- No CI billing/availability exception approved for this PR.
 
-## Next actions
-1. Run the project-profile validator against the exact bootstrap branch; independently confirm pruned inventory and locked payment boundaries.
-2. Audit the Draft PR independently at exact remote HEAD, mark PASS / FIX REQUIRED without inventing tests.
-3. Obtain explicit owner approval to merge the initialization PR.
-4. Begin screen map/mockup design review, then separate bounded implementation milestones only after owner design approval.
+## Next
+1. Complete MP-AI-01 Draft PR exact-head independent spec audit; verify provider facts, no tool/payment escalation, preservation of MP-001–MP-032.
+2. Independently audit and obtain human approval for MP-A0 PR #1 first. Then retarget MP-AI-01 on main and re-verify exact head before separate merge approval.
+3. UI design and actual AI/PayPal integration require separately bounded tasks and owner approval.
 
-## Locked boundaries
-PayPal Sandbox only; one fixed merchant; human-approved capture; no escrow, third-party payouts, live payments or AI-initiated money movement.
+**Locked:** Sandbox only, one merchant, human-only capture/void, no escrow or third-party payouts.
