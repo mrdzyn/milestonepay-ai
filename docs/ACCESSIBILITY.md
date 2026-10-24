@@ -89,3 +89,8 @@ Do not claim accessibility compliance solely because a component library or UI k
 When an app store provides accessibility metadata or labels, declarations must reflect validated behavior in the shipped build rather than design intent alone.
 
 For Apple products, use the current App Store Connect Accessibility Nutrition Label guidance referenced in `store/apple.md`. The template treats the declaration as a release-readiness field and requires re-verification of whether it is voluntary or mandatory at submission time.
+
+---
+
+## MilestonePay web baseline
+Target WCAG 2.2 AA. Ensure keyboard-only navigation through criteria freeze, PayPal authorization, evidence review and explicit capture consent; visible focus; semantic headings; zoom/reflow; proper error and UNKNOWN payment announcements. PayPal-hosted UI accessibility must be manually inspected during real Sandbox QA. No compliance claim is made in MP-A0.

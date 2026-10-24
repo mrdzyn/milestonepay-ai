@@ -258,3 +258,14 @@ Before release:
 - confirm migration/rollback readiness;
 - complete platform/store-specific checks;
 - complete the applicable release QA/manual validation gate.
+
+---
+
+## MilestonePay objective-based evidence requirements
+The authoritative 32-test matrix is `docs/MILESTONEPAY-SPEC-v1.md`, section 11. MP-A0 is a **docs-only** initialization; no application/AI/payment tests can yet pass. For MP-A0 run:
+1. `python3 scripts/validate_project_profile.py --repository mrdzyn/milestonepay-ai` on a fresh clone at the **exact PR SHA**.
+2. Check project mode, selected web design core, retained `ci.yml` + `common-validation.yml`, pruned master-only work and optional packs, and no secrets.
+3. Manual source audit of full product spec, security boundaries, ADR, UI inventory and 18-day/32-test traceability.
+4. Independent auditor gives PASS / FIX REQUIRED against the same remote head.
+
+Before MP-A2/MP-A3 claims, require actual controlled PayPal Sandbox authorize/capture and separate void traces; AI provider/model metadata and evidence-linked results; negative webhook, concurrency, cross-user and prompt injection tests. The AI agent performing implementation cannot independently pass its own audit. Hosted CI is **NOT PASS** until an actual job runs successfully. No inherited account-level billing exception applies automatically.

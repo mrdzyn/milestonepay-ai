@@ -203,3 +203,8 @@ Material changes to the design language should be treated like architecture chan
 4. review accessibility/platform impact;
 5. update tokens/components/docs;
 6. record durable rationale in `docs/PROJECT-MEMORY.md` when future teams/agents need it.
+
+---
+
+## MilestonePay web design scope
+The project selects only the web design pack. The proposed screen inventory and non-happy-path states are `docs/UI-MAP.md`. Brand, tokens and component catalog remain provisional; create reviewable screen designs and obtain owner approval before coding the material Next.js shell. Payment status must be conveyed with accessible text, not color alone. The PayPal Sandbox indicator remains visible throughout the payment journey.
