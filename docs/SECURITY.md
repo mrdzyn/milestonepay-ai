@@ -123,3 +123,8 @@ Before production release, confirm:
 - **Tests:** MP-004, 005, 011, 014–023, 029–031 are mandatory negative controls before live Sandbox demonstration. Any payment bypass or false paid state = FIX REQUIRED.
 
 This is a policy for future code, not evidence controls were already implemented.
+
+---
+
+## Google Gemini 3.8 Flash boundary (future implementation)
+Use server-side `GEMINI_API_KEY` only (never `NEXT_PUBLIC_*`); no PayPal/privileged Supabase credentials in AI prompts. Disable model tools, grounding/search, URL context and external fetch. Strictly validate output, source-ID membership and version freshness; treat prompt injection as untrusted evidence. Malformed/timeout/quota failures block AI review, never trigger PayPal settlement. Use minimized, synthetic/consented evidence; inspect free vs paid API data-use terms before handling personal data. Follow `docs/ADR-002-GEMINI-PRIMARY.md` and `docs/AI-VERIFICATION-CONTRACT.md`; controls are specified, **not yet coded**.

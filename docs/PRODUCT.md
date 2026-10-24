@@ -22,5 +22,8 @@ A buyer freezes 2–5 criteria and a USD $1–$200 price; the buyer uses PayPal 
 - Negative controls for cross-user access, stale evidence, forged webhooks, duplicate captures, prompt injection, and failing AI output.
 - Exact-head independent audit and objective human QA prior to any submission claims.
 
+## Selected AI model (planning decision)
+Google Gemini 3.8 Flash (`gemini-3.8-flash`) handles buyer-editable criteria suggestions and evidence assessment, but cannot initiate payment. See ADR-002 and `docs/AI-VERIFICATION-CONTRACT.md`.
+
 ## Plan and authority
 The definitive detailed spec, 18-day milestones and 32 test IDs are in `docs/MILESTONEPAY-SPEC-v1.md`. Material scope, risk, AI provider, and release decisions require explicit owner approval.

@@ -9,7 +9,7 @@ Initialize and build the existing public repository `mrdzyn/milestonepay-ai` fro
 
 **Absolute payment scope:** PayPal **Sandbox only**; single fixed business merchant/payee; buyer uses a different personal sandbox account; one USD milestone and full-amount authorization/capture; NO escrow, marketplace, multi-seller payouts, partner fee features, refunds, delayed disbursement, autonomous capture, or live mode. Contributor persona submits evidence but is not a payee. PayPal authorization is a temporary hold with 3-day recommended capture window, not guaranteed money or escrow. Design for a 48-hour demonstration lifecycle.
 
-**Stack:** TypeScript/Next.js, Supabase Auth/Postgres with RLS, official PayPal JS SDK + REST Orders v2/Payments v2, actual selected AI model with strict schema, Vitest/Playwright. Use synthetic data and explicit `PayPal Sandbox — no real money` labels throughout.
+**Stack:** TypeScript/Next.js, Supabase Auth/Postgres with RLS, official PayPal JS SDK + REST Orders v2/Payments v2, Google Gemini 3.8 Flash (`gemini-3.8-flash`, planned `@google/genai`, medium thinking) with the strict schema in `docs/AI-VERIFICATION-CONTRACT.md`; no tools/payment authority, Vitest/Playwright. Use synthetic data and explicit `PayPal Sandbox — no real money` labels throughout.
 
 **Implementation order and staged deliverables:**
 

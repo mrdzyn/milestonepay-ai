@@ -19,7 +19,7 @@ flowchart TD
 | --- | --- | --- |
 | UI | Next.js + TypeScript | Renders records and consent; never sets merchant or amount |
 | Auth/data | Supabase Auth, Postgres RLS | Buyer/contributor isolation; frozen criteria/evidence snapshots |
-| AI | Versioned provider adapter + strict JSON schema | Suggests criteria; advisory evidence assessment only |
+| AI | Google Gemini 3.8 Flash (`gemini-3.8-flash`), planned `@google/genai` server adapter, medium thinking and strict JSON | Advisory criteria suggestions and evidence assessment only; zero payment tools |
 | Payments | Server-only PayPal REST, JS SDK buyer approval | One fixed Sandbox merchant, USD, one full capture |
 | Audit | Append-only event history | Records data/source provenance; not a bank ledger |
 | QA | Vitest, Playwright, sandbox harness | Negative controls + verified real external transactions |
@@ -48,3 +48,6 @@ Never claim PayPal authorization creates escrow. No partial/multiple capture, se
 Local synthetic fixture → authorized developer-only Sandbox testing → independent security audit → owner-approved public hackathon demo. Production payment operation is **out of scope**.
 
 See `docs/ADR-001-SINGLE-MERCHANT.md` and `docs/MILESTONEPAY-SPEC-v1.md`. No database migrations or routes have been implemented as of MP-A0.
+
+## AI integration boundary (design, not deployed)
+See `docs/ADR-002-GEMINI-PRIMARY.md` and `docs/AI-VERIFICATION-CONTRACT.md` for versioned inputs, current evidence citations, strict output validation, disabled tools and error behavior. AI never writes payment state or enables capture independently of authenticated buyer consent. No real model call has been executed.
