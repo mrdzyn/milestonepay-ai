@@ -6,7 +6,7 @@
 - **Primary branch:** `main`
 - **Working branch:** `chore/mp-a0-greenfield-bootstrap`
 - **Base SHA:** `01de15e4a847f3536c6957853882705f54d714f6`
-- **PR:** Draft PR to be opened after bootstrap commit
+- **PR:** [#1](https://github.com/mrdzyn/milestonepay-ai/pull/1) — Draft, no independent audit or merge approval
 - **Active task:** `tasks/MP-A0-greenfield-initialization.md`
 - **Active handoff:** None
 
