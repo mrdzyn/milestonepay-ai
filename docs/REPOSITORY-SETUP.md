@@ -397,3 +397,13 @@ Before changing settings:
 - [ ] document any control the template cannot enforce automatically.
 
 Do not weaken a mature repository's protections merely to make it resemble the template.
+
+---
+
+## MilestonePay child-repository configuration (planned)
+- Project mode selected; design=true; platform=web; storeRelease=false; no storefronts or third-party integration guidance.
+- Retain `.github/workflows/ci.yml` plus `common-validation.yml` and `scripts/validate_project_profile.py`; remove master-only integrity workflow/validators.
+- Branch policy target: PR-only changes to main, independent exact-head audit, explicit owner merge approval, protected release configuration, and separate approved payment-secret environment.
+- The master template's GitHub ruleset does **not** transfer to this repository. This document does not claim child branch protection/required check configuration is active.
+- Verify emitted child `Project baseline / Common validation` check on a real PR before configuring that required context. Add true stack checks in a later Next.js scaffold PR when commands/lockfile exist. Do not invent a passing stack job in MP-A0.
+- Until hosted Actions can run, the repo is CI NOT PASS. A PR-specific external-runner/credit exception requires actual proof, equivalent checks, independent audit and separate owner approval; none is approved merely by creating the repository.

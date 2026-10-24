@@ -1,42 +1,31 @@
-# Project Status
-
-> Operational state only. Historical merge details and rationale remain in reviewed PRs and handoffs.
+# MilestonePay AI — Project Status
 
 ## Project
-
-- **Name:** AI-Native Project Template
-- **Current phase:** P8.0 M3 — generated/brownfield CI integration
-- **Status:** Review — M3 implementation complete; ready for independent exact-head audit
+- **Current phase:** MP-A0 — greenfield template initialization
+- **Status:** Draft initialization change, **not** independently audited; no running app
 - **Primary branch:** `main`
-- **Main SHA at task start:** `2d167b52bff2cce9506315b8615e53e84c62c642`
-- **Working branch:** `phase/p8-m3-generated-brownfield-ci`
-- **PR:** #24 — Draft until hosted CI is confirmed; then ready for independent review
-- **Active task:** `tasks/P8.0-m3-generated-brownfield-integration.md`
-- **Active handoff:** P8.0-C17
+- **Working branch:** `chore/mp-a0-greenfield-bootstrap`
+- **Base SHA:** `01de15e4a847f3536c6957853882705f54d714f6`
+- **PR:** [#1](https://github.com/mrdzyn/milestonepay-ai/pull/1) — Draft, no independent audit or merge approval
+- **Active task:** `tasks/MP-A0-greenfield-initialization.md`
+- **Active handoff:** None
 
 ## Completed
+- Existing repository was created from `mrdzyn/ai-native-project-template`.
+- MilestonePay product specification and owner-selected scope exist as planning artifacts.
+- A bootstrap change is proposed on a dedicated branch.
 
-- Phases 0–7, P8.0 M1/M2, and E1/E2a/E2b have merged.
-- E2b PR #23 was independently re-audited PASS and owner-approved for squash merge; `main` contains merge commit `2d167b52bff2cce9506315b8615e53e84c62c642`.
-- Live master `Protect Main` ruleset `23809419` requires **only** `Project baseline / Common validation`; `Template Integrity` is manual-only.
-- Owner chose Option B: Claude independent exact-head review and explicit human merge approval are process-only, not enforced by required GitHub approving reviews.
-- M3 documentation fixes in current branch: retain paired CI caller/reusable workflow and project validator in generated children; remove the three master-only files; reconcile stronger brownfield CI and post-merge release consumers; align old two-workflow descriptions.
-
-## Current objective / in-progress work
-
-- Implemented in `f91bf763151b6b3c0022098ff797ff9cf82ef505`: `validate_ci_caller_wiring()` in `scripts/validate_project_profile.py` — if `.github/workflows/ci.yml` has a job-level `jobs.<job_id>.uses: ./.github/workflows/common-validation.yml`, that workflow must exist; otherwise fail closed. No ci.yml, or a ci.yml that does not call the template, is unaffected (brownfield).
-- Extended the existing `scripts/test_validate_project_profile.py` (no new runner): unit cases plus a physically pruned child fixture built from the repo's real caller/callee/validator, asserting guarded master-only steps, child CLI success, missing-callee failure, brownfield (custom CI / no ci.yml) success, and leftover master workflow still rejected.
-- Codex P2 remediation (handoff P8.0-C17): caller detection replaced the line regex with stdlib `calls_common_validation()`, which ignores comments, block scalars (`run: |`) and step-level `uses:`; regression tests added; task file marks implemented work completed.
-- Local evidence: the three minimum scripts pass; a mutation (wiring check disabled) makes the self-test fail.
-- Independent exact-head audit and separate owner merge approval are pending.
+## NOT DONE / NOT TESTED
+- Greenfield pruning and project profile validation: pending final exact-head validation.
+- Independent project initialization audit: pending.
+- Next.js scaffolding, Supabase schema, payment controller, real PayPal Sandbox operations, AI calls, design approval, QA, public deployment, and Devpost submission: NOT IMPLEMENTED.
+- GitHub branch protection/rulesets and hosted CI on this repository: NOT VERIFIED. No CI exception has been granted for this PR.
 
 ## Next actions
+1. Run the project-profile validator against the exact bootstrap branch; independently confirm pruned inventory and locked payment boundaries.
+2. Audit the Draft PR independently at exact remote HEAD, mark PASS / FIX REQUIRED without inventing tests.
+3. Obtain explicit owner approval to merge the initialization PR.
+4. Begin screen map/mockup design review, then separate bounded implementation milestones only after owner design approval.
 
-1. Confirm the single hosted Project Baseline CI run passes at the final PR head (master inventory and self-test steps included).
-2. Genuinely independent exact-head audit using `P8.0-C17`; then fresh owner merge approval. Do not merge or deploy automatically.
-3. M4 final integration/least-privilege audit; optional manual Template Integrity dispatch only if separately owner-approved.
-
-## Known limitations
-
-- Master child-fixture unit tests cannot prove a real child repository's GitHub Actions workflow syntax; real child PR verification is still required for end-to-end proof.
-- P5.1 testing-budget observability is optional/deferred. No new release/provider automation is planned.
+## Locked boundaries
+PayPal Sandbox only; one fixed merchant; human-approved capture; no escrow, third-party payouts, live payments or AI-initiated money movement.

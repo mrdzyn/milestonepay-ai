@@ -110,3 +110,16 @@ Before production release, confirm:
 - configuration and secrets are supplied through approved mechanisms;
 - migration and rollback implications are understood;
 - security/privacy-impacting changes received human review.
+
+---
+
+## MilestonePay-specific binding controls (MP-A0 design)
+- **PayPal Sandbox only:** server rejects production host, live credentials and arbitrary payee selection. Browser and AI cannot choose currency/amount/merchant.
+- **Single fixed merchant:** contributor account is evidence submitter, not a payment beneficiary. There are no payouts, escrow, custody, platform fees, multiple captures, or refund features.
+- **Capture authority:** buyer must authenticate, own the contract, review fresh evidence and explicitly consent to exact amount and merchant. Backend performs atomic operation reservation and provider reconciliation; AI has no payment tools.
+- **States:** PayPal confirms provider status. Timeout -> UNKNOWN (no retry with a new idempotency key); verified webhook signature and IDs required; stale events cannot undo terminal states.
+- **AI/evidence:** limit allowed attachments to sanitized PNG/JPEG and size; never fetch arbitrary evidence URLs server-side; model output strict and citations must reference stored evidence IDs; prompt injection must not affect payment APIs.
+- **Data:** demo with synthetic persons only, private evidence storage, no tokens or user PII in logs; client-visible configuration may contain only approved public IDs.
+- **Tests:** MP-004, 005, 011, 014–023, 029–031 are mandatory negative controls before live Sandbox demonstration. Any payment bypass or false paid state = FIX REQUIRED.
+
+This is a policy for future code, not evidence controls were already implemented.

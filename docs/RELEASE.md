@@ -154,3 +154,12 @@ After release:
 - capture meaningful production feedback;
 - create bounded follow-up tasks;
 - update `docs/STATUS.md` when project state changes materially.
+
+---
+
+## MilestonePay hackathon distribution policy
+The proposed public open-source prototype is **sandbox-only**. No live PayPal configuration, real user transactions, production funds movement or release-to-commerce deployment is authorized. A public judge demo is not a production financial service.
+
+Devpost deadline: Nov 12, 2026 at 12:00 PST (Nov 13 at 04:00 PHT). Before public judge/demo claims, independently verify exact remote code SHA, PayPal transaction evidence (redacted IDs), AI implementation evidence, privacy/legal disclosures, and under-three-minute video. Never suggest escrow, protected funds, guaranteed payments, autonomous settlement, or PayPal endorsement.
+
+Any actual deployment, merge, secret provisioning, branch-bypass or live-payment scope change requires separately documented human authorization.
